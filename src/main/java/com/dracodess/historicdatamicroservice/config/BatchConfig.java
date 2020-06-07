@@ -8,6 +8,7 @@ import com.dracodess.historicdatamicroservice.step.Reader;
 import com.dracodess.historicdatamicroservice.step.Writer;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
+import org.springframework.batch.core.configuration.annotation.DefaultBatchConfigurer;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
@@ -15,10 +16,12 @@ import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.task.SimpleAsyncTaskExecutor;
+import org.springframework.core.task.TaskExecutor;
 
 @Configuration
 @EnableBatchProcessing
-public class BatchConfig {
+public class BatchConfig extends DefaultBatchConfigurer {
 
     @Autowired
     public JobBuilderFactory jobBuilderFactory;
@@ -36,9 +39,16 @@ public class BatchConfig {
     }
 
     @Bean
+    public TaskExecutor taskExecutor(){
+        SimpleAsyncTaskExecutor asyncTaskExecutor= new SimpleAsyncTaskExecutor("spring_batch");
+        asyncTaskExecutor.setConcurrencyLimit(5);
+        return asyncTaskExecutor;
+    }
+    @Bean
     public Step step1() {
-        return stepBuilderFactory.get("step1").<Stock, Stock>chunk(2)
-                .reader(Reader.reader("sampleDataset.csv"))
-                .processor(new Processor()).writer(new Writer(stockDao)).build();
+        return stepBuilderFactory.get("step1").<Stock, Stock>chunk(200000)
+                .reader(Reader.reader("preprocessedDataset.csv"))
+                .processor(new Processor()).writer(new Writer(stockDao))
+                .taskExecutor(taskExecutor()).build();
     }
 }
