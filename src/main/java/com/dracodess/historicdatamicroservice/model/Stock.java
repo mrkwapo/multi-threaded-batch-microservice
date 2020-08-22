@@ -78,6 +78,6 @@ public class Stock{
 
     @Override
     public String toString() {
-        return String.format("Stock[id=%d, symbol=%s, open_price=%f, close_price=%f, date_of_record=%s, change_in_price=%f ]", id, symbol, open_price, close_price, date_of_record, change_in_price);
+        return String.format("Stock[id=%d, symbol=%s, open_price=%f, close_price=%f, date_of_record=%s, change_in_price=%f ]", id, symbol, open_price, close_price, date_of_record, close_price - open_price);
     }
 }
