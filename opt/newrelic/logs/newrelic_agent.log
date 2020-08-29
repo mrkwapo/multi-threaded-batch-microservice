@@ -1,0 +1,18 @@
+2020-08-29T13:59:35,251-0400 [11968 1] com.newrelic INFO: Writing to New Relic log file: C:\Users\Admin\Desktop\batch-microservice-optimized\opt\newrelic\logs\newrelic_agent.log
+2020-08-29T13:59:35,251-0400 [11968 1] com.newrelic INFO: JRE vendor Oracle Corporation version 14.0.1
+2020-08-29T13:59:35,251-0400 [11968 1] com.newrelic INFO: JVM vendor Oracle Corporation Java HotSpot(TM) 64-Bit Server VM version 14.0.1+7
+2020-08-29T13:59:35,252-0400 [11968 1] com.newrelic INFO: OS Windows 10 version 10.0 arch amd64
+2020-08-29T13:59:35,252-0400 [11968 1] com.newrelic INFO: Agent Host: DESKTOP-15S9BIP IP: 169.254.26.220
+2020-08-29T13:59:35,252-0400 [11968 1] com.newrelic INFO: New Relic Agent v6.0.0 is initializing...
+2020-08-29T13:59:36,083-0400 [11968 18] com.newrelic INFO: Instrumentation com.newrelic.instrumentation.jdbc-resultset is disabled. Skipping.
+2020-08-29T13:59:46,822-0400 [11968 1] com.newrelic.agent.RPMServiceManagerImpl INFO: Configured to connect to New Relic at collector.newrelic.com:443
+2020-08-29T13:59:47,208-0400 [11968 1] com.newrelic INFO: Setting audit_mode to false
+2020-08-29T13:59:47,208-0400 [11968 1] com.newrelic INFO: Setting protocol to "https"
+2020-08-29T13:59:47,361-0400 [11968 1] com.newrelic.agent.config.ConfigServiceImpl INFO: Configuration file is C:\Users\Admin\Desktop\batch-microservice-optimized\opt\newrelic\.\newrelic.yml
+2020-08-29T13:59:47,368-0400 [11968 1] com.newrelic INFO: New Relic Agent v6.0.0 has started
+2020-08-29T13:59:47,369-0400 [11968 1] com.newrelic INFO: Agent class loader: com.newrelic.bootstrap.BootstrapAgent$JVMAgentClassLoader@65e579dc
+2020-08-29T13:59:47,509-0400 [11968 1] com.newrelic INFO: JMX LinkingMetadata started, registering MBean: com.newrelic.jfr:type=LinkingMetadata
+2020-08-29T13:59:47,512-0400 [11968 1] com.newrelic INFO: JMX LinkingMetadata bean registered
+2020-08-29T13:59:47,513-0400 [11968 1] com.newrelic INFO: Premain startup complete in 13,189ms
+2020-08-29T13:59:47,521-0400 [11968 13] com.newrelic.agent.core.CoreServiceImpl INFO: JVM is shutting down
+2020-08-29T13:59:47,533-0400 [11968 13] com.newrelic.agent.core.CoreServiceImpl INFO: New Relic Agent has shutdown
